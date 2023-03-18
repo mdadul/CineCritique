@@ -12,7 +12,7 @@ export default function Hero() {
               <span class="inline-block text-blue-500"> Movie Experience</span>
             </h2>
             <p class="text-base text-gray-100 md:text-lg">
-              Experience movies like never before with our immersive platform”
+              Experience movies like never before with our immersive platform
             </p>
           </div>
           <div class="flex flex-col items-center justify-center space-y-2 sm:flex-row sm:space-y-0 sm:space-x-2 lg:justify-start">
