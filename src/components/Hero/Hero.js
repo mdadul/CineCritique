@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import video from "../../assets/video/hero.m4v";
 export default function Hero() {
   return (
@@ -16,19 +17,13 @@ export default function Hero() {
             </p>
           </div>
           <div class="flex flex-col items-center justify-center space-y-2 sm:flex-row sm:space-y-0 sm:space-x-2 lg:justify-start">
-            <a
-              href="/login"
+            <Link
+              to="/login"
               class="inline-flex h-12 w-full items-center justify-center rounded-full bg-blue-500 px-6 font-medium tracking-wide text-white shadow-md outline-none transition duration-200 hover:bg-blue-400 focus:ring sm:w-auto"
             >
               {" "}
               Start a free Trial{" "}
-            </a>
-            <a
-              href="/"
-              class="inline-flex h-12 w-full items-center justify-center rounded-full border-2 border-blue-500 px-4 font-semibold text-blue-600 transition-colors duration-200 hover:border-y-blue-400 hover:text-blue-400 sm:w-auto"
-            >
-              Watch a demo video
-            </a>
+            </Link>
           </div>
         </div>
         <div class="h-full justify-center">

@@ -40,15 +40,6 @@ export default function Navbar() {
           className="peer-checked:mt-8 peer-checked:max-h-56 flex max-h-0 w-full flex-col items-center justify-between overflow-hidden transition-all md:ml-24 md:max-h-full md:flex-row md:items-start"
         >
           <ul className="flex flex-col items-center space-y-2 md:ml-auto md:flex-row md:space-y-0">
-            <li className="text-gray-50 md:mr-12 hover:text-white">
-              <Link to="/">Home</Link>
-            </li>
-            <li className="text-gray-50 md:mr-12 hover:text-white">
-              <Link to="/">About Us</Link>
-            </li>
-            <li className="text-gray-50 md:mr-12 hover:text-white">
-              <Link to="/">Movies</Link>
-            </li>
             <li className="text-gray-50   hover:text-white flex gap-3">
               <Link to='/login' className="rounded-md border-2 border-white px-6 py-1 font-medium text-white transition-colors hover:bg-gray-900 hover:text-white">
                 Sign In
