@@ -1,9 +1,31 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import logo from "../../assets/images/logo.png";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import Button from "../common/Button";
 import illustrator from '../../assets/images/login.png'
+import { publicPost } from "../../utilities/apiCaller";
 export default function Login() {
+  const email = useRef();
+  const password = useRef();
+
+  const [message, setMessage] = useState("");
+
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    const user = {
+      email: email.current.value,
+      password: password.current.value,
+    }
+    try {
+      const response = await publicPost("/user/login", JSON.stringify(user));
+      setMessage(response.message);
+      Navigate("/dashboard");
+    } catch (error) {
+      setMessage(error.message);
+    }
+  };
+
+
   return (
     <div className="flex w-screen flex-wrap text-slate-800">
       <div className="flex w-full flex-col md:w-1/2 bg-gray-800 text-white">
@@ -21,7 +43,7 @@ export default function Login() {
             Sign in to your account below.
           </p>
 
-          <form className="flex flex-col items-stretch pt-3 md:pt-8">
+          <form className="flex flex-col items-stretch pt-3 md:pt-8" onSubmit={handleLogin}>
             <div className="flex flex-col pt-4">
               <div className="relative flex overflow-hidden rounded-md border-2 transition focus-within:border-blue-600">
                 <input
@@ -29,6 +51,8 @@ export default function Login() {
                   id="login-email"
                   className="w-full flex-shrink appearance-none border-gray-300 bg-white py-2 px-4 text-base text-gray-700 placeholder-gray-400 focus:outline-none"
                   placeholder="Email"
+                  required
+                  ref={email}
                 />
               </div>
             </div>
@@ -39,6 +63,8 @@ export default function Login() {
                   id="login-password"
                   className="w-full flex-shrink appearance-none border-gray-300 bg-white py-2 px-4 text-base text-gray-700 placeholder-gray-400 focus:outline-none"
                   placeholder="Password"
+                  required
+                  ref={password}
                 />
               </div>
             </div>
@@ -48,6 +74,8 @@ export default function Login() {
             >
               Forgot password?
             </Link>
+              {/* show message */}
+          <p className="text-white text-xl text-center py-2">{message}</p>
             <Button label="Sign in" />
           </form>
           <div className="py-12 text-center">
