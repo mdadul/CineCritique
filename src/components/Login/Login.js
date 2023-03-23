@@ -5,7 +5,7 @@ import Button from "../common/Button";
 import illustrator from '../../assets/images/login.png'
 import { publicPost } from "../../utilities/apiCaller";
 export default function Login() {
-  const email = useRef();
+  const name = useRef();
   const password = useRef();
 
   const [message, setMessage] = useState("");
@@ -13,7 +13,7 @@ export default function Login() {
   const handleLogin = async (e) => {
     e.preventDefault();
     const user = {
-      email: email.current.value,
+      name: name.current.value,
       password: password.current.value,
     }
     try {
@@ -47,12 +47,12 @@ export default function Login() {
             <div className="flex flex-col pt-4">
               <div className="relative flex overflow-hidden rounded-md border-2 transition focus-within:border-blue-600">
                 <input
-                  type="email"
-                  id="login-email"
+                  type="text"
+                  id="login-name"
                   className="w-full flex-shrink appearance-none border-gray-300 bg-white py-2 px-4 text-base text-gray-700 placeholder-gray-400 focus:outline-none"
-                  placeholder="Email"
+                  placeholder="name"
                   required
-                  ref={email}
+                  ref={name}
                 />
               </div>
             </div>
