@@ -17,7 +17,7 @@ export default function Navbar() {
         <input type="checkbox" className="peer hidden" id="navbar-open" />
         <label
           className="absolute top-5 right-7 cursor-pointer md:hidden"
-          for="navbar-open"
+          htmlFor="navbar-open"
         >
           <span className="sr-only">Toggle Navigation</span>
           <svg
@@ -26,11 +26,11 @@ export default function Navbar() {
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
-            stroke-width="2"
+            strokeWidth="2"
           >
             <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
               d="M4 6h16M4 12h16M4 18h16"
             />
           </svg>
