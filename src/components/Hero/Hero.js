@@ -17,7 +17,7 @@ export default function Hero() {
           </div>
           <div class="flex flex-col items-center justify-center space-y-2 sm:flex-row sm:space-y-0 sm:space-x-2 lg:justify-start">
             <a
-              href="/"
+              href="/login"
               class="inline-flex h-12 w-full items-center justify-center rounded-full bg-blue-500 px-6 font-medium tracking-wide text-white shadow-md outline-none transition duration-200 hover:bg-blue-400 focus:ring sm:w-auto"
             >
               {" "}

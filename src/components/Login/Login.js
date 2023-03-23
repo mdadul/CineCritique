@@ -1,6 +1,8 @@
 import React from "react";
 import logo from "../../assets/images/logo.png";
 import { Link } from "react-router-dom";
+import Button from "../common/Button";
+import illustrator from '../../assets/images/login.png'
 export default function Login() {
   return (
     <div className="flex w-screen flex-wrap text-slate-800">
@@ -46,12 +48,7 @@ export default function Login() {
             >
               Forgot password?
             </Link>
-            <button
-              type="submit"
-              className="rounded-lg bg-blue-600 px-4 py-2 text-center text-base font-semibold text-white shadow-md outline-none ring-blue-500 ring-offset-2 transition hover:bg-blue-700 focus:ring-2 md:w-32"
-            >
-              Sign in
-            </button>
+            <Button label="Sign in" />
           </form>
           <div className="py-12 text-center">
             <p className="text-gray-300">
@@ -67,7 +64,7 @@ export default function Login() {
         </div>
       </div>
       <div className="relative hidden h-screen select-none  md:block md:w-1/2">
-        {/* <img src={logo} alt="sign in" className="absolute inset-0 mt-32 w-4/5 object-cover" /> */}
+        <img src={illustrator} alt="sign in" className="absolute inset-0 mt-24 mx-auto w-1/2 object-cover" />
       </div>
     </div>
   );
