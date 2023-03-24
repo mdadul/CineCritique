@@ -1,5 +1,5 @@
 import React, { useRef, useState } from "react";
-import { Link, Navigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import logo from "../../assets/images/logo.png";
 import Button from "../common/Button";
 import illustration from "../../assets/images/signup.png";
@@ -12,6 +12,8 @@ export default function Signup() {
   const confirmPassword = useRef();
 
   const [message, setMessage] = useState("");
+  const navigateTo = useNavigate();
+
 
   const registerUser = async (e) => {
     e.preventDefault();
@@ -27,7 +29,7 @@ export default function Signup() {
           JSON.stringify(newUser)
         );
         setMessage(response.message);
-        Navigate("/login");
+        navigateTo("/login");
       } catch (error) {
         setMessage(error.message);
       }
