@@ -15,6 +15,7 @@ export default function Search() {
       const response = await publicGet("/movie/name/" + name);
       if (response.data.status === 200) {
         setData(response.data.data);
+        setError("");
       }
     } catch (err) {
       setError(err.message);
@@ -60,7 +61,7 @@ export default function Search() {
         </form>
       </div>
 
-      {data && <Card data={data} />}
+      {data && <Card data={data} /> }
     </>
   );
 }
