@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
 import logo from "../../assets/images/logo.png";
-import { Link, Navigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Button from "../common/Button";
 import illustrator from '../../assets/images/login.png'
 import { publicPost } from "../../utilities/apiCaller";
@@ -9,6 +9,7 @@ export default function Login() {
   const password = useRef();
 
   const [message, setMessage] = useState("");
+  const navigateTo = useNavigate();
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -17,9 +18,9 @@ export default function Login() {
       password: password.current.value,
     }
     try {
-      const response = await publicPost("/user/login", JSON.stringify(user));
+      const response = await publicPost("/user/signin", JSON.stringify(user));
       setMessage(response.message);
-      Navigate("/dashboard");
+      navigateTo("/");
     } catch (error) {
       setMessage(error.message);
     }
